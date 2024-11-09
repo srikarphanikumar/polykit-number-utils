@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+        "target": "ES2018",
+        "module": "ESNext",
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        "declaration": true,
+        "declarationMap": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "strict": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react",
+        "baseUrl": ".",
+        "experimentalDecorators": true, // Added for Angular decorators
+        "emitDecoratorMetadata": false, // Added for Angular decorators
+        "paths": {
+            "@core/*": [
+                "src/core/*"
+            ],
+            "@react/*": [
+                "src/react/*"
+            ],
+            "@angular/*": [
+                "src/angular/*"
+            ]
+        },
+        "rootDir": "." // Added to help TypeScript find source files
+    },
+    "include": [
+        "src/**/*.ts", // Updated include patterns
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.test.ts",
+        "**/*.spec.ts"
+    ]
+}
