@@ -17,9 +17,9 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "baseUrl": ".",
         "experimentalDecorators": true, // Added for Angular decorators
         "emitDecoratorMetadata": false, // Added for Angular decorators
+        "baseUrl": ".",
         "paths": {
             "@core/*": [
                 "src/core/*"
