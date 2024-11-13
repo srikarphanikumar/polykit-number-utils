@@ -20,6 +20,7 @@ tsconfig.json
 .vscode/
 .idea/
 .git/
+.husky
 
 # Documentation
 docs/
