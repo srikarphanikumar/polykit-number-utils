@@ -25,18 +25,19 @@
     "files": [
         "dist",
         "README.md",
-        "LICENSE"
+        "LICENSE",
+        "docs"
     ],
     "scripts": {
         "build": "tsup",
         "test": "npm run test:core && npm run test:react && npm run test:angular",
-        "test:core": "TEST_ENV=core jest",
-        "test:react": "TEST_ENV=react jest",
-        "test:angular": "TEST_ENV=angular jest",
-        "test:watch": "TEST_ENV=core jest --watch",
+        "test:core": "cross-env TEST_ENV=core jest",
+        "test:react": "cross-env TEST_ENV=react jest",
+        "test:angular": "cross-env TEST_ENV=angular jest",
+        "test:watch": "cross-env TEST_ENV=core jest --watch",
         "lint": "eslint src --ext .ts,.tsx",
         "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-        "prepare": "npm run build",
+        "prepare": "husky install && npm run build",
         "prepublishOnly": "npm test && npm run lint",
         "preversion": "npm run lint",
         "version": "npm run format && git add -A src",
@@ -48,9 +49,26 @@
         "typescript",
         "react",
         "angular",
-        "utils"
+        "utils",
+        "number-formatting",
+        "currency-formatting",
+        "percentage-formatting",
+        "unit-formatting",
+        "number-utilities"
     ],
-    "author": "",
+    "author": {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "url": "https://your-website.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/srikarphanikumar/polykit-number-utils"
+    },
+    "bugs": {
+        "url": "https://github.com/srikarphanikumar/polykit-number-utils.git/issues"
+    },
+    "homepage": "https://github.com/srikarphanikumar/polykit-number-utils.git#readme",
     "license": "MIT",
     "peerDependencies": {
         "@angular/core": ">=16.0.0",
@@ -69,6 +87,7 @@
         "@typescript-eslint/parser": "^6.13.0",
         "cross-env": "7.0.3",
         "eslint": "^8.54.0",
+        "husky": "^8.0.3",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "29.7.0",
         "prettier": "^3.1.0",
@@ -84,5 +103,9 @@
     },
     "dependencies": {
         "@testing-library/react": "16.0.1"
-    }
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "sideEffects": false
 }
