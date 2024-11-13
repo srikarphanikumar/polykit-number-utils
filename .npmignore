@@ -5,13 +5,17 @@ src/
 jest-setup/
 tests/
 coverage/
-*.test.ts
 jest.config.js
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
 
 # Configuration files
 .eslintrc
 .prettierrc
 tsconfig.json
+tsconfig.spec.json
 .gitignore
 
 # Development files
