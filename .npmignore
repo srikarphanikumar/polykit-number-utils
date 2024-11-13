@@ -1,0 +1,28 @@
+# Source
+src/
+
+# Tests
+jest-setup/
+tests/
+coverage/
+*.test.ts
+jest.config.js
+
+# Configuration files
+.eslintrc
+.prettierrc
+tsconfig.json
+.gitignore
+
+# Development files
+*.log
+*.tsbuildinfo
+.vscode/
+.idea/
+.git/
+
+# Documentation
+docs/
+*.md
+!README.md
+!LICENSE

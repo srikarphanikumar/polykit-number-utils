@@ -17,8 +17,8 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
-        "experimentalDecorators": true, // Added for Angular decorators
-        "emitDecoratorMetadata": false, // Added for Angular decorators
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": false,
         "baseUrl": ".",
         "paths": {
             "@core/*": [
@@ -31,10 +31,10 @@
                 "src/angular/*"
             ]
         },
-        "rootDir": "." // Added to help TypeScript find source files
+        "rootDir": "."
     },
     "include": [
-        "src/**/*.ts", // Updated include patterns
+        "src/**/*.ts",
         "src/**/*.tsx"
     ],
     "exclude": [

@@ -24,7 +24,7 @@ import {
     interpolate,
     toSignificantDigits,
     NumberFormatError
-} from '../core';
+} from '.';
 
 describe('Number Utilities - Format Number', () => {
     describe('formatNumber', () => {

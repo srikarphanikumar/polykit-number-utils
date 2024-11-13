@@ -1,0 +1,33 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./out-tsc/spec",
+        "types": [
+            "jest",
+            "node",
+            "@testing-library/jest-dom"
+        ],
+        "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "target": "ES2022",
+        "module": "CommonJS",
+        "lib": [
+            "ES2022",
+            "dom"
+        ],
+        "skipLibCheck": true,
+        "strict": true,
+        "strictPropertyInitialization": false
+    },
+    "include": [
+        "src/**/*.spec.ts",
+        "src/**/*.test.ts",
+        "jest-setup/**/*.ts",
+        "jest-setup/**/*.d.ts"
+    ],
+    "files": [
+        "jest-setup/test-types.d.ts"
+    ]
+}

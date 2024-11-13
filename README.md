@@ -111,4 +111,4 @@ See detailed documentation for each package:
 
 ## 📝 License
 
-MIT © [Your Name]
+MIT © Srikar Phani Kumar Marti

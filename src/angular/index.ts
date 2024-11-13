@@ -1,34 +1,37 @@
-// src/angular/index.ts
-import { Pipe, PipeTransform } from '@angular/core';
-import { formatNumber, formatCurrency, formatPercentage } from '../core';
+// Export the module
+export { PolyNumberModule } from './number-utils.module';
 
-@Pipe({ name: 'polyNumber' })
-export class PolyNumberPipe implements PipeTransform {
-    transform(value: number, decimals?: number): string {
-        return formatNumber(value, { decimals });
-    }
-}
+// Export the service
+export { PolyNumberUtilService } from './number-utils.service';
 
-@Pipe({ name: 'polyCurrency' })
-export class PolyCurrencyPipe implements PipeTransform {
-    transform(
-        value: number,
-        currency?: string,
-        locale?: string
-    ): string {
-        return formatCurrency(value, { currency, locale });
-    }
-}
+// Export all pipes
+export {
+    PolyFormatNumberPipe,
+    PolyFormatCurrencyPipe,
+    PolyFormatPercentagePipe,
+    PolyFormatWithUnitPipe,
+    PolyFormatOrdinalPipe,
+    PolyToExponentialPipe,
+    PolyToWordsPipe,
+    PolyMaskNumberPipe,
+    PolyPadNumberPipe,
+    PolyToSignificantDigitsPipe,
+    POLY_NUMBER_PIPES
+} from './pipes';
 
-@Pipe({ name: 'polyPercentage' })
-export class PolyPercentagePipe implements PipeTransform {
-    transform(value: number, decimals?: number): string {
-        return formatPercentage(value, decimals);
-    }
-}
+// Re-export types from core that might be needed by consumers
+export type {
+    NumberFormatOptions,
+    CurrencyFormatOptions,
+    PercentageFormatOptions,
+    NumberUnitOptions,
+    NumberMaskOptions,
+    NumberRangeOptions,
+    NumberPrecision,
+    StatisticsOptions,
+    ComparisonOperator,
+    RoundingMode
+} from '../core';
 
-export const POLY_NUMBER_PIPES = [
-    PolyNumberPipe,
-    PolyCurrencyPipe,
-    PolyPercentagePipe,
-];
+// Re-export NumberFormatError for error handling
+export { NumberFormatError } from '../core';
