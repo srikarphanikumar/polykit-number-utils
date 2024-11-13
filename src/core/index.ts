@@ -6,7 +6,6 @@ import {
     NumberUnitOptions,
     NumberPrecision,
     NumberMaskOptions,
-    NumberStringOptions,
     PercentageFormatOptions,
     RoundingMode,
     StatisticsOptions
@@ -418,6 +417,7 @@ export const formatOrdinal = (
     locale: string = 'en-US'
 ): string => {
     if (!isValidNumber(value)) {
+        console.log('locale', locale);
         throw new NumberFormatError('Invalid number input');
     }
 
@@ -461,7 +461,7 @@ export const parseNumber = (
         const decimalSeparator = parts.find(d => d.type === 'decimal')?.value || '.';
 
         // Normalize the string
-        let normalized = value
+        const normalized = value
             .trim()
             .replace(/\s/g, '') // Remove all whitespace
             .replace(new RegExp(`\\${groupSeparator}`, 'g'), '') // Remove group separators
@@ -753,6 +753,7 @@ export const toWords = (
     locale: string = 'en-US'
 ): string => {
     if (!isValidNumber(value)) {
+        console.log('locale: ', locale);
         throw new NumberFormatError('Invalid number input');
     }
 

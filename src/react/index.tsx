@@ -494,9 +494,9 @@ interface PolymorphicProps<T extends React.ElementType> {
     children?: React.ReactNode;
 }
 
-type PropsWithPolymorphicRef<
+export type PropsWithPolymorphicRef<
     T extends React.ElementType,
-    P = {}
+    P = object
     > = P & PolymorphicProps<T> & Omit<React.ComponentPropsWithRef<T>, keyof (P & PolymorphicProps<T>)>;
 
 /**
@@ -526,7 +526,7 @@ type AsProp<C extends React.ElementType> = {
 
 type PropsToOmit<C extends React.ElementType, P> = keyof (AsProp<C> & P);
 
-type PolymorphicComponentProp<C extends React.ElementType, Props = {}> =
+type PolymorphicComponentProp<C extends React.ElementType, Props = object> =
     React.PropsWithChildren<Props & AsProp<C>> &
     Omit<React.ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
 

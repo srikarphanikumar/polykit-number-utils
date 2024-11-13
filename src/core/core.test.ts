@@ -6,7 +6,6 @@ import {
     roundToPrecision,
     isWithinRange,
     formatWithUnit,
-    random,
     sum,
     average,
     isApproximatelyEqual,
@@ -14,7 +13,6 @@ import {
     parseNumber,
     maskNumber,
     compareNumbers,
-    padNumber,
     normalize,
     toExponential,
     getOrderOfMagnitude,
@@ -403,7 +401,7 @@ describe('Number Utilities - Comparison Operations', () => {
         it('should throw error for invalid inputs', () => {
             expect(() => compareNumbers(NaN, 5, '>')).toThrow(NumberFormatError);
             expect(() => compareNumbers(5, NaN, '>')).toThrow(NumberFormatError);
-            // @ts-ignore - Testing invalid operator
+            // @ts-expect-error - Testing invalid operator
             expect(() => compareNumbers(5, 3, 'invalid')).toThrow(NumberFormatError);
         });
     });
